@@ -1,0 +1,300 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #FDFBF5; /* 배경색 */
+    color: #3D3D3D; /* 기본 텍스트 색상 */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #2D3A4E;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-top: 8px;
+}
+
+.add-user-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.add-user-section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #3D3D3D;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#new-user-name {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#new-user-name:focus, #view-filter:focus {
+    outline: none;
+    border-color: #2D3A4E;
+    box-shadow: 0 0 0 3px rgba(45, 58, 78, 0.25);
+}
+
+#add-user-btn {
+    padding: 10px 20px;
+    background-color: #2D3A4E; /* 메인 색상 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#add-user-btn:hover {
+    background-color: #212b3a; /* 메인 색상 어둡게 */
+}
+
+.filter-section {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    color: #3D3D3D;
+}
+
+#view-filter {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 5px;
+    margin-top: 15px;
+    padding: 5px;
+    max-height: 250px; /* For long books like Psalms */
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.chapter-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1; /* Make cells square */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: default; /* Default cursor for dashboard view */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.chapter-cell.read {
+    background-color: #C0A062; /* 포인트 색상 */
+    color: white;
+    border-color: #C0A062;
+}
+
+.modal-content .chapter-cell.selected {
+    background-color: #2D3A4E; /* 메인 색상 */
+    color: white;
+    border-color: #212b3a;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.user-card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    color: #2D3A4E; /* 메인 색상 */
+}
+
+.user-card h3 .name-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.delete-user-btn {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.delete-user-btn:hover {
+    color: #e53935; /* A shade of red */
+}
+
+.achievement-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    /* 아이콘이 위로 뜨는 현상 방지 */
+    vertical-align: middle;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #C0A062; /* 포인트 색상 */
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: right;
+    margin: -5px 0 15px 0;
+}
+.user-card button {
+    margin-top: auto; /* 카드의 맨 아래에 버튼을 위치시킴 */
+    padding: 10px 15px;
+    background-color: #2D3A4E; /* 메인 색상 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.user-card button:hover {
+    background-color: #212b3a; /* 메인 색상 어둡게 */
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-content .chapter-grid .chapter-cell {
+    cursor: pointer; /* Make cells clickable only in modal */
+}
+
+.modal-content .chapter-cell:not(.read):hover {
+    background-color: #e0e0e0;
+}
+
+.modal-content select, .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
