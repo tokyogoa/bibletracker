@@ -21,15 +21,14 @@
             <h2>새로운 멤버 추가</h2>
             <div class="input-group">
                 <input type="text" id="new-user-name" placeholder="이름을 입력하세요">
-                <button id="add-user-btn">추가</button>
+                <button id="add-user-btn">추가하기</button>
             </div>
         </section>
 
         <section class="filter-section">
             <label for="view-filter">진행 상황 보기:</label>
             <select id="view-filter">
-                <option value="all">전체 진행 상황</option>
-                <!-- 성경책 옵션이 여기에 동적으로 추가됩니다. -->
+                <!-- 옵션이 동적으로 추가됩니다 -->
             </select>
         </section>
 
@@ -42,11 +41,11 @@
     <div id="progress-modal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>읽은 부분 추가</h2>
+            <h2>읽은 부분 추가하기</h2>
             <p><strong id="modal-user-name"></strong> 님의 진행 상황</p>
             <select id="bible-book"></select>
             <div id="modal-chapter-grid" class="chapter-grid"></div>
-            <button id="save-progress-btn">저장</button>
+            <button id="save-progress-btn">저장하기</button>
         </div>
     </div>
 
